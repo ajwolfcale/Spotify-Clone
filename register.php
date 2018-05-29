@@ -1,6 +1,6 @@
 <?php
   include("includes/classes/Account.php");
-  
+
   $account = new Account();
 
   include("includes/handlers/register-handler.php");
@@ -34,7 +34,7 @@
   </form>
 
 
-  <form id="loginForm" action="register.php" method="POST">
+  <form id="registerForm" action="register.php" method="POST">
     <h2>Create a free account</h2>
 
     <p>
