@@ -18,7 +18,7 @@
 			<h2>Login to your account</h2>
 			<p>
 				<label for="loginUsername">Username</label>
-				<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bartSimpson" required>
+				<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. ajwolfcale" required>
 			</p>
 			<p>
 				<label for="loginPassword">Password</label>
@@ -36,31 +36,31 @@
 			<p>
 				<?php echo $account->getError("Your username must be between 5 and 25 characters"); ?>
 				<label for="username">Username</label>
-				<input id="username" name="username" type="text" placeholder="e.g. bartSimpson" required>
+				<input id="username" name="username" type="text" placeholder="e.g. ajwolfcale" required>
 			</p>
 
 			<p>
 				<?php echo $account->getError("Your first name must be between 2 and 25 characters"); ?>
 				<label for="firstName">First name</label>
-				<input id="firstName" name="firstName" type="text" placeholder="e.g. Bart" required>
+				<input id="firstName" name="firstName" type="text" placeholder="e.g. Aaron" required>
 			</p>
 
 			<p>
 				<?php echo $account->getError("Your last name must be between 2 and 25 characters"); ?>
 				<label for="lastName">Last name</label>
-				<input id="lastName" name="lastName" type="text" placeholder="e.g. Simpson" required>
+				<input id="lastName" name="lastName" type="text" placeholder="e.g. Wolfcale" required>
 			</p>
 
 			<p>
 				<?php echo $account->getError("Your emails don't match"); ?>
 				<?php echo $account->getError("Email is invalid"); ?>
 				<label for="email">Email</label>
-				<input id="email" name="email" type="email" placeholder="e.g. bart@gmail.com" required>
+				<input id="email" name="email" type="email" placeholder="e.g. ajw@gmail.com" required>
 			</p>
 
 			<p>
 				<label for="email2">Confirm email</label>
-				<input id="email2" name="email2" type="email" placeholder="e.g. bart@gmail.com" required>
+				<input id="email2" name="email2" type="email" placeholder="e.g. ajw@gmail.com" required>
 			</p>
 
 			<p>
