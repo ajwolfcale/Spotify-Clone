@@ -20,13 +20,19 @@ $(document).ready(function() {
 
 
 function setTrack(trackId, newPlaylist, play) {
-
-	audioElement.setTrack("assets/music/bensound-clearday.mp3");
-
-	if(play == true) {
-		audioElement.play();
-	}
-}
+  
+    $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+  
+      var track = JSON.parse(data);
+  
+      audioElement.setTrack(track.path);
+      audioElement.play();
+    });
+  
+    if(play == true) {
+      audioElement.play();
+    }
+  }
 
 function playSong(){
   $(".controlButton.play").hide();
