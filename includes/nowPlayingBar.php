@@ -18,6 +18,10 @@ $(document).ready(function() {
   setTrack(currentPlaylist[0], currentPlaylist, false);
   updateVolumeProgressBar(audioElement.audio);
 
+// this prevents the browser defaults ("preventing the highlighting when changing volume")
+$("#nowPlayingBarContainer").on("mousedown touchstart mousemove touchmove", function(e){
+  e.preventDefault();
+});
 
 $(".playbackBar .progressBar").mousedown(function() {
   mouseDown = true;
