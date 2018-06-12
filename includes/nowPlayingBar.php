@@ -20,42 +20,47 @@ $(document).ready(function() {
 
 
 function setTrack(trackId, newPlaylist, play) {
-  
-    $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
-  
-      var track = JSON.parse(data);
 
-      $(".trackName span").text(track.title);
+	$.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
 
-      $.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data) {
-        var artist = JSON.parse(data);
-        $(".artistName span").text(artist.name);
-      });
+		var track = JSON.parse(data);
+		$(".trackName span").text(track.title);
 
-      $.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album }, function(data) {
-        var album = JSON.parse(data);
-        $(".albumLink img").attr("src", album.artworkPath);
-      });
+		$.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data) {
+			var artist = JSON.parse(data);
+			$(".artistName span").text(artist.name);
+		});
 
-      audioElement.setTrack(track.path);
-      audioElement.play();
-    });
-  
-    if(play == true) {
-      audioElement.play();
-    }
-  }
+		$.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album }, function(data) {
+			var album = JSON.parse(data);
+			$(".albumLink img").attr("src", album.artworkPath);
+		});
 
-function playSong(){
-  $(".controlButton.play").hide();
-  $(".controlButton.pause").show();
-  audioElement.play();
+
+		audioElement.setTrack(track);
+		playSong();
+	});
+
+	if(play == true) {
+		audioElement.play();
+	}
 }
 
-function pauseSong(){
-  $(".controlButton.play").show();
-  $(".controlButton.pause").hide();
-  audioElement.pause();
+function playSong() {
+
+	if(audioElement.audio.currentTime == 0) {
+		$.post("includes/handlers/ajax/updatePlays.php", { songId: audioElement.currentlyPlaying.id });
+	}
+
+	$(".controlButton.play").hide();
+	$(".controlButton.pause").show();
+	audioElement.play();
+}
+
+function pauseSong() {
+	$(".controlButton.play").show();
+	$(".controlButton.pause").hide();
+	audioElement.pause();
 }
 
 </script>
