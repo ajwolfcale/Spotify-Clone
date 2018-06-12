@@ -76,6 +76,16 @@ function timeFromOffset(mouse, progressBar){
   audioElement.setTime(seconds);
 }
 
+let prevSong = () => {
+	if(audioElement.audio.currentTime >= 3 || currentIndex == 0) {
+		audioElement.setTime(0);
+	}
+	else {
+		currentIndex = currentIndex - 1;
+		setTrack(currentPlaylist[currentIndex], currentPlaylist, true);
+	}
+}
+
 let nextSong = () => {
   if(repeat){
     audioElement.setTime(0);
@@ -187,9 +197,9 @@ function pauseSong() {
 						<img src="assets/images/icons/shuffle.png" alt="Shuffle">
 					</button>
 
-					<button class="controlButton previous" title="Previous button">
-						<img src="assets/images/icons/previous.png" alt="Previous">
-					</button>
+					<button class="controlButton previous" title="Previous button" onclick="prevSong()">
+            <img src="assets/images/icons/previous.png" alt="Previous">
+          </button>
 
 					<button class="controlButton play" title="Play button" onclick="playSong()">
 						<img src="assets/images/icons/play.png" alt="Play">
