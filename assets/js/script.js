@@ -5,7 +5,11 @@ var audioElement;
 function Audio() {
 
 	this.currentlyPlaying;
-	this.audio = document.createElement('audio');
+  this.audio = document.createElement('audio'); 
+  
+  this.audio.addEventListener("canplay", function() {
+    $(".progressTime.remaining").text(this.duration);
+  })
 
 	this.setTrack = function(track) {
     this.currentlyPlaying = track;
