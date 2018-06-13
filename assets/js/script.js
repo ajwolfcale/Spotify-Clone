@@ -6,6 +6,7 @@ var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
 var tempPlaylist;
+var userLoggedIn;
 
 let formatTime = (seconds) => {
   var time = Math.round(seconds);
