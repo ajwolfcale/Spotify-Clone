@@ -120,6 +120,8 @@ let setShuffle = () => {
 	shuffle = !shuffle;
 	var imageName = shuffle ? "shuffle-active.png" : "shuffle.png";
 	$(".controlButton.shuffle img").attr("src", "assets/images/icons/" + imageName);
+  // console.log(currentPlaylist);
+  // console.log(shufflePlaylist);
 
 	if(shuffle == true) {
 		//Randomize playlist
