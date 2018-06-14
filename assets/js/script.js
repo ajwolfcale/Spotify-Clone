@@ -8,6 +8,17 @@ var shuffle = false;
 var tempPlaylist;
 var userLoggedIn;
 
+
+let openPage = (url) => {
+
+  if(url.indexOf("?") == -1){
+    url = url + "?";
+  }
+
+  var encodedUrl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
+  $("#mainContent").load(encodedUrl);
+}
+
 let formatTime = (seconds) => {
   var time = Math.round(seconds);
   var minutes = Math.floor(time / 60);

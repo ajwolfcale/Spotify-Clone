@@ -1,9 +1,9 @@
 
       <div id="navBarContainer">
         <nav class="navBar">
-          <a href="index.php" class="logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/2000px-Spotify_logo_with_text.svg.png" alt="spotify logo">
-          </a>
+          <span class="logo" onclick="openPage('index.php')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/2000px-Spotify_logo_with_text.svg.png" alt="spotify logo">
+          </span>
 
           <div class="group">
 
